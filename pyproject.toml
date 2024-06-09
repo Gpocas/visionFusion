@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "visionFusion"
-version = "0.1.4"
+version = "0.1.5"
 description = "visionFusion é um conjunto de ferramentas de ocr para facilitar o processo de extração de texto em diferentes cenarios   "
 authors = ["Gpocas <gpocas01@gmail.com>"]
 packages = [{include = "visionFusion"}]
