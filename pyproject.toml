@@ -1,9 +1,20 @@
 [tool.poetry]
 name = "visionpy"
 version = "0.1.0"
-description = ""
+description = "visionpy é um conjunto de ferramentas de ocr para facilitar o processo de extração de texto em diferentes cenarios   "
 authors = ["Gpocas <gpocas01@gmail.com>"]
+packages = [{include = "visionpy"}]
 readme = "README.md"
+classifiers = [
+    "Topic :: Education",
+    "Natural Language :: Portuguese (Brazilian)",
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3.11",
+]
+
+[tool.poetry.urls]
+"Código" = "https://github.com/Gpocas/visionpy"
+"Bug Tracker" = "https://github.com/Gpocas/visionpy/issues"
 
 [tool.poetry.dependencies]
 python = "^3.11"
