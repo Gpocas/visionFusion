@@ -8,7 +8,7 @@ from google.cloud import vision
 from httpx import get
 from PIL import ImageGrab, Image
 
-from visionpy.ScreenGrabber import ScreenGrabberApp
+from visionFusion.ScreenGrabber import ScreenGrabberApp
 from typing import Optional, Tuple, Union, List
 
 class screenGrabber():

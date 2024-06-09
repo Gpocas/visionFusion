@@ -18,7 +18,7 @@ Esta classe inicializa um aplicativo simples de captura de tela usando Tkinter.
 Exemplo:
 
 ```python
-from visionpy.ScreenGrabber import ScreenGrabberApp
+from visionFusion.ScreenGrabber import ScreenGrabberApp
 
 grabber = screenGrabber()
 ```
