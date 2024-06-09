@@ -1,6 +1,5 @@
 import os
 import tempfile
-import tkinter as tk
 import pytesseract
 from pathlib import Path
 
@@ -8,14 +7,7 @@ from google.cloud import vision
 from httpx import get
 from PIL import ImageGrab, Image
 
-from visionFusion.screenGrabber import ScreenGrabberApp
 from typing import Optional, Tuple, Union, List
-
-class screenGrabber():
-    def __init__(self) -> None:
-        root = tk.Tk()
-        app = ScreenGrabberApp(root)
-        root.mainloop()
 
 class visionai():
     
@@ -112,7 +104,8 @@ class visionai():
             image.save(tmp.name)
 
         return self.detect_text_from_file(tmp.name)
-    
+
+
 class tesseract():
     
     def __init__(self, tesseract_executable: Optional[Path] = None) -> None:

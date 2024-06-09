@@ -1,15 +1,14 @@
 import tkinter as tk
-
 import pyperclip
 
 
-class ScreenGrabberApp:
-    def __init__(self, root):
-        self.root = root
+class ScreenGrabber():
+    def __init__(self):
+        self.root = tk.Tk()
         self.root.title('Screen Grabber')
         self.root.geometry('400x400')
 
-        self.main_frame = tk.Frame(root, bg='#0D1B2A')
+        self.main_frame = tk.Frame(self.root, bg='#0D1B2A')
         self.main_frame.pack(fill=tk.BOTH, expand=True)
 
         self.dim_clip_button_coords = tk.Button(
@@ -60,6 +59,9 @@ class ScreenGrabberApp:
         self.curY = None
 
         self.selection_window = None
+
+        # Inicia o loop principal do tkinter
+        self.root.mainloop()
 
     def create_coord_entry(self, label, row):
         frame = tk.Frame(self.main_frame, bg='#0D1B2A')
@@ -138,8 +140,4 @@ class ScreenGrabberApp:
             pyperclip.copy(coordinates)
             self.label.configure(text='Coordinates copied to clipboard.')
 
-
-if __name__ == '__main__':
-    root = tk.Tk()
-    app = ScreenGrabberApp(root)
-    root.mainloop()
+ScreenGrabber()
