@@ -4,7 +4,7 @@ import pytesseract
 from pathlib import Path
 
 from google.cloud import vision
-from httpx import get
+from requests import get
 from PIL import ImageGrab, Image
 
 from typing import Optional, Tuple, Union, List
@@ -108,9 +108,15 @@ class visionai():
 
 class tesseract():
     
-    def __init__(self, tesseract_executable: Optional[Path] = None) -> None:
+    def __init__(self, tesseract_executable: Optional[Path] = None, proxy: Optional[str] = None) -> None:
         
         self.tesseract_executable = tesseract_executable
+        self.proxy = proxy
+
+        if self.proxy:
+             os.environ['HTTP_PROXY'] = self.proxy
+             os.environ['HTTPS_PROXY'] = self.proxy
+
         
         if self.tesseract_executable:
             pytesseract.pytesseract.tesseract_cmd = str(self.tesseract_executable)

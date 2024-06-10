@@ -106,7 +106,6 @@ tess = tesseract(tesseract_executable=Path('caminho/para/tesseract'))
 ## Dependências:
 
 - google-cloud-vision: Biblioteca cliente da API Google Cloud Vision.
-- httpx: Cliente HTTP para Python.
 - pillow: Biblioteca de imagens Python (PIL Fork).
 - pytesseract: Wrapper Python para o Tesseract-OCR da Google.
 
