@@ -139,5 +139,3 @@ class ScreenGrabber():
             )
             pyperclip.copy(coordinates)
             self.label.configure(text='Coordinates copied to clipboard.')
-
-ScreenGrabber()
