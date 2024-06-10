@@ -2,15 +2,6 @@
 
 Este projeto fornece um conjunto de ferramentas para capturar regiões da tela e detectar texto dentro de imagens usando dois métodos diferentes de OCR (Reconhecimento Óptico de Caracteres): Google Cloud Vision API e Tesseract.
 
-## Instalação
-
-Para usar este projeto, você precisa instalar as dependências necessárias. Você pode fazer isso usando o poetry
-
-
-```bash
-poetry install
-```
-
 ## Uso
 ### screenGrabber
 
@@ -18,7 +9,7 @@ Esta classe inicializa um aplicativo simples de captura de tela usando Tkinter.
 Exemplo:
 
 ```python
-from visionFusion.utils import ScreenGrabber
+from visionFusion import ScreenGrabber
 
 grabber = screenGrabber()
 ```
@@ -31,6 +22,7 @@ Inicialização
 
 ```python
 from pathlib import Path
+from visionFusion import visionai
 
 # Inicialize com credenciais do Google Cloud e proxy opcional
 vision = visionai(creds=Path('caminho/para/creds.json'), proxy='http://seu.proxy:porta')
@@ -71,6 +63,8 @@ Inicialização
 
 ```python
 from pathlib import Path
+from visionFusion import tesseract
+
 
 Inicialize com o caminho do executável do Tesseract
 tess = tesseract(tesseract_executable=Path('caminho/para/tesseract'))
@@ -102,12 +96,6 @@ tess = tesseract(tesseract_executable=Path('caminho/para/tesseract'))
     ```python
     texto = tess.detect_text_from_screen_region((0, 0, 100, 100))
     ```
-
-## Dependências:
-
-- google-cloud-vision: Biblioteca cliente da API Google Cloud Vision.
-- pillow: Biblioteca de imagens Python (PIL Fork).
-- pytesseract: Wrapper Python para o Tesseract-OCR da Google.
 
 ## Licença
 
